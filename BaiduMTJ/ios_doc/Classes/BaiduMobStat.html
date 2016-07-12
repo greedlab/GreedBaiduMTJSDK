@@ -47,6 +47,8 @@
 	
 	<option value="//api/name/enableExceptionLog">&nbsp;&nbsp;&nbsp;&nbsp;enableExceptionLog</option>
 	
+	<option value="//api/name/groupId">&nbsp;&nbsp;&nbsp;&nbsp;groupId</option>
+	
 	<option value="//api/name/logSendInterval">&nbsp;&nbsp;&nbsp;&nbsp;logSendInterval</option>
 	
 	<option value="//api/name/logSendWifiOnly">&nbsp;&nbsp;&nbsp;&nbsp;logSendWifiOnly</option>
@@ -85,6 +87,8 @@
 	
 	<option value="//api/name/pageviewStartWithName:">&nbsp;&nbsp;&nbsp;&nbsp;- pageviewStartWithName:</option>
 	
+	<option value="//api/name/setDeviceCuid:">&nbsp;&nbsp;&nbsp;&nbsp;- setDeviceCuid:</option>
+	
 	<option value="//api/name/startWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithAppId:</option>
 	
 	<option value="//api/name/webviewStartLoadWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- webviewStartLoadWithRequest:</option>
@@ -120,6 +124,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableDebugOn">enableDebugOn</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableExceptionLog">enableExceptionLog</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupId">groupId</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logSendInterval">logSendInterval</a></span></li>
 	
@@ -161,6 +167,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pageviewStartWithName:">pageviewStartWithName:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDeviceCuid:">setDeviceCuid:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithAppId:">startWithAppId:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webviewStartLoadWithRequest:">webviewStartLoadWithRequest:</a></span></li>
@@ -192,7 +200,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">BaiduMobStat.h</td>
+	<td class="specification-value">BaiduMobStat.h<br />BaiduMobStatBplus.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -203,7 +211,7 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>百度移动应用统计接口
-当前版本 V3.8.2.0</p>
+当前版本 {{VERSION}}</p>
 					</div>
 					
 					
@@ -338,6 +346,18 @@
 		<code><a href="#//api/name/getDeviceCuid">&ndash;&nbsp;getDeviceCuid</a></code>
 	</span>
 	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDeviceCuid:">&ndash;&nbsp;setDeviceCuid:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groupId">&nbsp;&nbsp;groupId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -510,6 +530,49 @@
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>是否启用Crash日志收集
 默认值 YES</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BaiduMobStat.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groupId" title="groupId"></a>
+	<h3 class="subsubtitle method-title">groupId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>设置KeyChain共享的Group,内部版在startWithAppId前，必须调用,格式 xxxxxx.com.baidu.mtjgroup</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *groupId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>设置KeyChain共享的Group,内部版在startWithAppId前，必须调用,格式 xxxxxx.com.baidu.mtjgroup</p>
+
+<p>发布证书的AppIdentifierPrefix，可以在开发账号中查看，也可以在钥匙串访问中，查看您开发证书的AppIdentifierPrefix，例如：3BJYKWHMM4.com.baidu.mtjgroup</p>
 	</div>
 	
 	
@@ -755,8 +818,8 @@
 	
 	<div class="method-subsection brief-description">
 		<p>设置app的版本号
-由于兼容历史Xcode3工程的原因，默认值 取CFBundleVersion中的版本号
-若要统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号），可自行获取后传入</p>
+从4.1版本开始，默认统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号
+如需统计自行设定的版本号，可由此传入</p>
 	</div>		
 	
     
@@ -774,8 +837,8 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>设置app的版本号
-由于兼容历史Xcode3工程的原因，默认值 取CFBundleVersion中的版本号
-若要统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号），可自行获取后传入</p>
+从4.1版本开始，默认统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号
+如需统计自行设定的版本号，可由此传入</p>
 	</div>
 	
 	
@@ -1238,6 +1301,59 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setDeviceCuid:" title="setDeviceCuid:"></a>
+	<h3 class="subsubtitle method-title">setDeviceCuid:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>设置开发者自己获取的设备cuid
+可以不设置，默认使用SDK生成的Cuid</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setDeviceCuid:(NSString *)<em>deviceCuid</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceCuid</em></dt>
+			<dd><p>用户自行获取的Cuid</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>设置开发者自己获取的设备cuid
+可以不设置，默认使用SDK生成的Cuid</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BaiduMobStat.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startWithAppId:" title="startWithAppId:"></a>
 	<h3 class="subsubtitle method-title">startWithAppId:</h3>
 	
@@ -1258,7 +1374,7 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>appkey</em></dt>
+			<dt><em>appKey</em></dt>
 			<dd><p>用户在mtj网站上创建应用，获取对应的appKey</p></dd>
 		</dl>
 		
@@ -1362,7 +1478,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Baidu. All rights reserved. (Last updated: 2016-02-18)</span><br />
+						<p><span class="copyright">&copy; 2016 Baidu. All rights reserved. (Last updated: 2016-07-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

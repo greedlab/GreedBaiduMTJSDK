@@ -9,7 +9,8 @@ iOS版百度统计SDK
 
 ```
 pod 'GreedBaiduMTJSDK'
-```
+```
+
 ## LICENSE
 
 [MIT](LICENSE)

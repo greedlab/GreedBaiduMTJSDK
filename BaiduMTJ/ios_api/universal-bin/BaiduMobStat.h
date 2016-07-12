@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
 @class UIViewController;
 
 /**
@@ -34,18 +33,17 @@ typedef enum _BaiduMobStatMonitorStrategy {
 
 /**
  *  百度移动应用统计接口
- *  当前版本 V3.8.2.0
+ *  当前版本 4.1.0
  */
 @interface BaiduMobStat : NSObject
-
 /**
  *  以下property属性，均为可选设置
  */
 
 /**
  *  设置app的版本号
- *  由于兼容历史Xcode3工程的原因，默认值 取CFBundleVersion中的版本号
- *  若要统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号），可自行获取后传入
+ *  从4.1版本开始，默认统计CFBundleShortVersionString中的版本号（即与AppStore上一致的版本号
+ *  如需统计自行设定的版本号，可由此传入
  */
 @property (nonatomic, copy) NSString *shortAppVersion;
 
@@ -118,7 +116,7 @@ typedef enum _BaiduMobStatMonitorStrategy {
  *  设置应用的appkey，启动统计SDK。
  *  注意！！！以下行为Api调用前，必须先调用该接口。
  *
- *  @param appkey 用户在mtj网站上创建应用，获取对应的appKey
+ *  @param appKey 用户在mtj网站上创建应用，获取对应的appKey
  */
 - (void)startWithAppId:(NSString *)appKey;
 
@@ -189,6 +187,7 @@ typedef enum _BaiduMobStatMonitorStrategy {
  */
 - (NSString *)getDeviceCuid;
 
+
 @end
 
 /**
@@ -208,5 +207,3 @@ typedef enum _BaiduMobStatMonitorStrategy {
 @end
 
 BAIDU_MOB_STAT_DEFINE_CATEGORY
-
-

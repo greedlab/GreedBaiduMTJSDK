@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "GreedBaiduMTJSDK"
-  s.version = "3.8.2"
+  s.version = "4.1.0"
   s.license = "MIT"
   s.summary = "iOS版百度统计SDK"
   s.homepage = "https://github.com/greedlab/GreedBaiduMTJSDK"
