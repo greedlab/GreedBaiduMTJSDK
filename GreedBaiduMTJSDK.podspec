@@ -7,9 +7,12 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/greedlab/GreedBaiduMTJSDK"
   s.author       = { "Bell" => "bell@greedlab.com" }
   s.source       = { :git => "https://github.com/greedlab/GreedBaiduMTJSDK.git", :tag => s.version }
-  s.platform = :ios
+s.platform     = :ios, "7.0"
+
   s.requires_arc = true
   s.source_files = 'BaiduMTJ/ios_api/universal-bin/*.h'
   s.vendored_libraries = 'BaiduMTJ/ios_api/universal-bin/libBaiduMobStat.a'
-  s.frameworks = 'Foundation', 'JavaScriptCore'
+  #s.preserve_paths = 'BaiduMTJ/ios_api/universal-bin/libBaiduMobStat.a'
+  s.frameworks = 'UIKIT', 'Foundation', 'JavaScriptCore', 'CoreGraphics', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'Security'
+  s.library = 'z.1.2.5', 'stdc++'
 end
