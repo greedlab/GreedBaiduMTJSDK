@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "GreedBaiduMTJSDK"
-  s.version = "4.1.0"
+  s.version = "4.3.0"
   s.license = "MIT"
   s.summary = "iOS版百度统计SDK"
   s.homepage = "https://github.com/greedlab/GreedBaiduMTJSDK"
@@ -10,8 +10,10 @@ Pod::Spec.new do |s|
 s.platform     = :ios, "7.0"
 
   s.requires_arc = true
-  s.source_files = 'BaiduMTJ/ios_api/universal-bin/*.h'
-  s.vendored_libraries = 'BaiduMTJ/ios_api/universal-bin/libBaiduMobStat.a'
+  # s.source_files = 'BaiduMTJ/ios_api/universal-bin/*.h'
+  s.source_files = 'BaiduMTJ/ios_api/*.h'
+  # s.vendored_libraries = 'BaiduMTJ/ios_api/universal-bin/libBaiduMobStat.a'
+  s.vendored_libraries = 'BaiduMTJ/ios_api/libBaiduMobStat.a'
   #s.preserve_paths = 'BaiduMTJ/ios_api/universal-bin/libBaiduMobStat.a'
   s.frameworks = 'UIKIT', 'Foundation', 'JavaScriptCore', 'CoreGraphics', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'Security'
   s.library = 'z.1.2.5', 'stdc++'

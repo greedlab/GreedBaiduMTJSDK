@@ -63,7 +63,7 @@
 }
 
 - (void)logEventClick:(id)sender {
-    [[BaiduMobStat defaultStat] logEvent:@"Event1" eventLabel:@"自定义事件一"];
+    [[BaiduMobStat defaultStat] logEvent:@"event1" eventLabel:@"自定义事件一"];
 }
 
 - (void)logEventWithDurationTime:(id)sender {
