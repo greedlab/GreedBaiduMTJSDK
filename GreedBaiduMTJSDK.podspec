@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name = "GreedBaiduMTJSDK"
-  s.version = "4.3.0"
+  s.version = "4.3.1"
   s.license = "MIT"
   s.summary = "iOS版百度统计SDK"
   s.homepage = "https://github.com/greedlab/GreedBaiduMTJSDK"
   s.author       = { "Bell" => "bell@greedlab.com" }
   s.source       = { :git => "https://github.com/greedlab/GreedBaiduMTJSDK.git", :tag => s.version }
-s.platform     = :ios, "7.0"
+  s.platform     = :ios, "7.0"
 
   s.requires_arc = true
   # s.source_files = 'BaiduMTJ/ios_api/universal-bin/*.h'
